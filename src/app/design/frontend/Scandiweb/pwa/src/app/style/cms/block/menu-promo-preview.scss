@@ -1,0 +1,70 @@
+/*
+ * @category  Budo
+ * @package   Budo_PWA
+ * @author    Ivans Zuks <info@scandiweb.com>
+ * @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+ * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+
+.Menu {
+    &-Promotion {
+        @include desktop {
+            display: flex;
+            padding: 0 2rem 40px;
+        }
+    }
+
+    &-PageLink {
+        margin: 1.5rem 0;
+        text-align: center;
+
+        @include desktop {
+            font-size: 13px;
+            margin: 0 3rem 0 0;
+        }
+    }
+
+    &-Social {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+
+        @include desktop {
+            align-items: center;
+            margin-left: 6rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        ul {
+            display: grid;
+            grid-auto-flow: column;
+            justify-items: center;
+            width: 14rem;
+
+            @include desktop {
+                grid-column-gap: 12px;
+                width: auto;
+            }
+        }
+
+        li {
+            width: 1.9rem;
+
+            @include desktop {
+                margin-bottom: 0;
+                width: 16px;
+            }
+        }
+    }
+}
