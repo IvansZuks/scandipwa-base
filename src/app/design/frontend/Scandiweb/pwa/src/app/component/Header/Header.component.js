@@ -6,7 +6,13 @@
  * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
  */
 
-import { Header as BaseHeader } from 'SourceComponent/Header/Header.component';
+import {
+    CART_OVERLAY,
+    Header as BaseHeader
+} from 'SourceComponent/Header/Header.component';
+import CartOverlay from 'Component/CartOverlay';
+import ClickOutside from 'Component/ClickOutside';
+import MyAccountOverlay from 'Component/MyAccountOverlay';
 import OfflineNotice from 'Component/OfflineNotice';
 import Menu from 'Component/Menu';
 import isMobile from 'SourceUtil/Mobile';
@@ -14,6 +20,7 @@ import isMobile from 'SourceUtil/Mobile';
 export {
     CART,
     CART_EDITING,
+    CART_OVERLAY,
     CHECKOUT,
     CMS_PAGE,
     PDP,
@@ -45,6 +52,67 @@ export class Header extends BaseHeader {
         ok: this.renderOkButton.bind(this)
     };
 
+    renderAccountButton(isVisible = false) {
+        const {
+            onMyAccountOutsideClick,
+            onMyAccountButtonClick,
+            isCheckout,
+            showMyAccountLogin,
+            closeOverlay,
+            onSignIn
+        } = this.props;
+
+        if (isMobile.any() && !isCheckout) {
+            return null;
+        }
+
+        if (isCheckout && isSignedIn()) {
+            return null;
+        }
+
+        return (
+            <ClickOutside onClick={ onMyAccountOutsideClick } key="account">
+                <div
+                    aria-label="My account"
+                    block="Header"
+                    elem="MyAccount"
+                >
+                    <div
+                        block="Header"
+                        elem="Button"
+                        mods={ {isVisible, type: 'account'} }
+                        elem="MyAccountWrapper"
+                        role="button"
+                        tabIndex="0"
+                        onClick={ onMyAccountButtonClick }
+                    >
+                        <div
+                            block="Header"
+                            elem="MyAccountTitle"
+                        >
+                            { __('Account') }
+                        </div>
+                        <button
+                            block="Header"
+                            elem="Button"
+                            mods={ {isVisible, type: 'account'} }
+                            aria-label="Open my account"
+                            id="myAccount"
+                        />
+                    </div>
+
+                    { ((isMobile.any() && showMyAccountLogin) || !isMobile.any()) && (
+                        <MyAccountOverlay
+                            onSignIn={ onSignIn }
+                            closeOverlay={ closeOverlay }
+                            isCheckout={ isCheckout }
+                        />
+                    ) }
+                </div>
+            </ClickOutside>
+        );
+    }
+
     renderMenu() {
         const { isCheckout } = this.props;
 
@@ -53,6 +121,55 @@ export class Header extends BaseHeader {
         }
 
         return <Menu />;
+    }
+
+    renderMinicartButton(isVisible = false) {
+        const {
+            onMinicartOutsideClick,
+            onMinicartButtonClick,
+            isCheckout,
+            navigationState: { name }
+        } = this.props;
+
+        if (isMobile.any() || isCheckout) {
+            return null;
+        }
+
+        return (
+            <ClickOutside onClick={ onMinicartOutsideClick } key="minicart">
+                <div
+                    block="Header"
+                    elem="Button"
+                    mods={ {isVisible, type: 'minicart'} }
+                >
+                    <div
+                        block="Header"
+                        elem="MinicartButtonWrapper"
+                        role="button"
+                        tabIndex="0"
+                        onClick={ () => {
+                            if (name !== CART_OVERLAY) {
+                                onMinicartButtonClick();
+                            }
+                        } }
+                    >
+                        <span
+                            block="Header"
+                            elem="MinicartTitle"
+                        >
+                            { __('Cart') }
+                        </span>
+                        <span
+                            aria-label="Minicart"
+                            block="Header"
+                            elem="MinicartIcon"
+                        />
+                        { this.renderMinicartItemsQty() }
+                    </div>
+                    <CartOverlay />
+                </div>
+            </ClickOutside>
+        );
     }
 
     render() {
