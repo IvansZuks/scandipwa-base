@@ -1,0 +1,16 @@
+{
+    "footer-contact-us": {
+        "title": "Footer Contact Us",
+        "identifier": "footer-contact-us",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/footer/contact-us.html",
+        "is_active": 1,
+        "stores": 0
+    },
+    "footer-payment-images": {
+        "title": "Footer Payment Images",
+        "identifier": "footer-payment-images",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/footer/payment-images.html",
+        "is_active": 1,
+        "stores": 0
+    }
+}

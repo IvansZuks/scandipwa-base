@@ -186,6 +186,14 @@
 
         @include desktop {
             justify-content: flex-end;
+
+            .SearchField {
+                order: 1;
+
+                &-SearchWrapper {
+                    top: calc(var(--header-total-height));
+                }
+            }
         }
     }
 

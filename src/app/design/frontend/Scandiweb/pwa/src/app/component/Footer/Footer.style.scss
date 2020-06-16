@@ -1,0 +1,125 @@
+/*
+ * @category  Budo
+ * @package   Budo_PWA
+ * @author    Ivans Zuks <info@scandiweb.com>
+ * @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+ * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+
+:root {
+    --footer-font-size: 12px;
+    --footer-padding: 80px;
+    --footer-width: 1280px;
+    --black: #000;
+    --brown: #202020;
+    --white: #fff;
+}
+
+.Footer {
+    align-items: center;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &-Comodo {
+        width: 100px;
+    }
+
+    &-Klarna {
+        width: 175px;
+    }
+
+    &-Comodo,
+    &-Klarna {
+        @include mobile() {
+            margin: 0 auto;
+        }
+    }
+
+    &-LinkList,
+    &-ContactUs {
+        a {
+            color: inherit;
+        }
+
+        h4 {
+            font-size: var(--footer-font-size);
+            margin-bottom: 25px;
+            text-align: left;
+            text-transform: uppercase;
+
+            @include mobile() {
+                padding: 14px 0 0 14px;
+            }
+        }
+    }
+
+    &-ContactUs {
+        &-Address,
+        &-Telephones,
+        &-Emails {
+            margin-bottom: 25px;
+            text-align: left;
+
+            p {
+                font-size: var(--footer-font-size);
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &-LinkList {
+        display: flex;
+        justify-content: space-between;
+        max-width: var(--footer-width);
+        padding-bottom: var(--footer-padding);
+        padding-top: var(--footer-padding);
+        width: 100%;
+
+        @include mobile {
+            display: block;
+            padding-bottom: 20px;
+            padding-top: 0;
+        }
+
+        li {
+            font-size: var(--footer-font-size);
+            line-height: 16px;
+            padding-left: 0;
+            text-align: left;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    &-Copyright {
+        align-items: center;
+        color: inherit;
+        background: var(--brown);
+        display: flex;
+        font-size: var(--footer-font-size);
+        justify-content: center;
+        height: 40px;
+        width: 100%;
+    }
+
+    .ExpandableContent {
+        &-Button::before,
+        &-Button::after {
+            background-color: var(--white);
+        }
+
+        &-Heading {
+            color: var(--white);
+            font-size: var(--footer-font-size);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
