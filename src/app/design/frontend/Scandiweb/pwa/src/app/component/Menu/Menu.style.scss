@@ -256,7 +256,6 @@
         &_isVisible {
             display: block;
             left: 0;
-            padding: 0 60px;
         }
     }
 
@@ -265,6 +264,7 @@
 
         @include desktop {
             display: flex;
+            padding: 0 60px;
         }
 
         @media (min-width: 1024px) and (max-width: 1130px) {
@@ -405,7 +405,7 @@
             padding-left: 0;
 
             &:last-child {
-                margin-right: 0;
+                margin-right: 20px;
             }
         }
 
