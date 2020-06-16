@@ -7,7 +7,9 @@
  */
 
 :root {
-    --menu-background-color: #fff;
+    --menu-color-white: #fff;
+    --menu-color-black: #000;
+    --menu-first-level-background-color: #202020;
     --menu-desktop-background-color: rgba(122, 122, 122, .44);
     --menu-desktop-height: 60px;
     --menu-item-figure-background: var(--secondary-base-color);
@@ -32,9 +34,10 @@
         padding: 1rem;
 
         @include desktop {
-            margin: calc(var(--header-total-height) * -1) auto auto;
-            max-width: var(--content-wrapper-width);
-            padding: 0;
+            background-color: var(--menu-first-level-background-color);
+            color: var(--menu-color-white);
+            margin: 0 auto auto;
+            padding: 0 60px;
         }
 
         li {
@@ -58,10 +61,25 @@
 
     &-MainCategories {
         @include desktop {
-            display: inline-block;
+            display: block;
             padding-left: 2rem;
             padding-right: 40px;
             z-index: 100;
+
+            .Menu-Link {
+                color: var(--menu-color-white);
+
+                &:after {
+                    background-image: url('./images/arrow_down.svg');
+                    background-repeat: no-repeat;
+                    content: ' ';
+                    height: 10px;
+                    position: absolute;
+                    top: 48%;
+                    right: -17px;
+                    width: 10px;
+                }
+            }
         }
     }
 
@@ -70,11 +88,13 @@
 
         @include desktop {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         &_type {
             &_subcategory {
-                background: var(--menu-background-color);
+                background: var(--menu-color-white);
                 grid-auto-rows: max-content;
                 grid-row-gap: 2rem;
                 padding: 1rem;
@@ -83,7 +103,7 @@
                     display: grid;
                     grid-column-gap: 200px;
                     grid-row-gap: 40px;
-                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-columns: repeat(4, 1fr);
                     padding: 0;
                     width: 100%;
                 }
@@ -199,10 +219,29 @@
         }
     }
 
+    &-Image {
+        @include desktop {
+            padding: 40px 40px 40px 0;
+            width: 100%;
+
+            .Image-Image {
+                object-position: 100% 50%;
+            }
+        }
+    }
+
+    &-Promotion {
+        .Menu-Link {
+            @include desktop {
+                color: var(--menu-color-black);
+            }
+        }
+    }
+
     &-SubCategoriesWrapper {
         display: none;
         position: absolute;
-        top: calc(var(--header-total-height) + 3px);
+        top: var(--header-total-height);
         width: 100%;
 
         &::before {
@@ -216,11 +255,17 @@
 
         &_isVisible {
             display: block;
+            left: 0;
+            padding: 0 60px;
         }
     }
 
     &-SubCategoriesWrapperInner {
         background-color: var(--overlay-background);
+
+        @include desktop {
+            display: flex;
+        }
 
         @media (min-width: 1024px) and (max-width: 1130px) {
             max-height: calc(80vh - var(--header-total-height));
@@ -288,8 +333,9 @@
             font-size: 12px;
 
             @include desktop {
-                color: var(--menu-second-level-color);
+                color: var(--menu-color-black);
                 font-size: 14px;
+                font-weight: 700;
                 text-transform: uppercase;
             }
         }
@@ -313,7 +359,7 @@
             }
 
             &-Link {
-                margin-top: 20px;
+                margin-top: 10px;
             }
         }
     }
@@ -349,7 +395,7 @@
     }
 
     &-Link {
-        color: inherit;
+        color: var(--menu-color-black);
         padding-left: 1.5rem;
         white-space: nowrap;
 
@@ -357,6 +403,10 @@
             display: block;
             margin-right: 4rem;
             padding-left: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
 
         &:hover,

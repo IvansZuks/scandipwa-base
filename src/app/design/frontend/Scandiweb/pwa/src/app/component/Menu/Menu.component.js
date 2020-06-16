@@ -17,6 +17,8 @@ import CmsBlock from 'Component/CmsBlock';
 import { getSortedItems } from 'SourceUtil/Menu';
 import StoreSwitcher from 'Component/StoreSwitcher';
 import MenuItem from 'Component/MenuItem';
+import Image from 'Component/Image';
+import media from 'Util/Media';
 
 import './Menu.style';
 
@@ -211,11 +213,25 @@ export default class MenuOverlay extends PureComponent {
                 >
                     <div
                         block="Menu"
-                        elem="SubCategories"
+                        elem="SubCategoriesContentWrapper"
                     >
-                        { this.renderSubLevel(item) }
+                        <div
+                            block="Menu"
+                            elem="SubCategories"
+                        >
+                            { this.renderSubLevel(item) }
+                        </div>
                     </div>
-                    { this.renderAdditionalInformation() }
+                    <div
+                        block="Menu"
+                        elem="Image"
+                    >
+                        <Image
+                            alt={ 'logo_alt' }
+                            src={ media(item.icon) }
+                            ratio="16x9"
+                        />
+                    </div>
                 </div>
                 <div
                     block="Menu"
