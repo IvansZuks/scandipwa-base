@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Budo
+ * @package   Budo_PWA
+ * @author    Ivans Zuks <info@scandiweb.com>
+ * @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+ * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="content_customization" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Content customization</label>
+            <tab>scandipwa</tab>
+            <resource>ScandiPWA_Customization::scandipwa_config</resource>
+
+            <group id="footer_content" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Footer</label>
+
+                <field id="footer_contact_us" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Contact Us CMS block</label>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+                <field id="footer_images_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Images CMS block</label>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+                <field id="footer_information_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Information CMS block</label>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+                <field id="footer_shops_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Shops And Departments CMS block</label>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+                <field id="footer_catalog_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Product And Categories CMS block</label>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

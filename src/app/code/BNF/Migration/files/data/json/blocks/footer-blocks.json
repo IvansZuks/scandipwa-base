@@ -12,5 +12,26 @@
         "content": "app/code/BNF/Migration/files/data/html/blocks/footer/payment-images.html",
         "is_active": 1,
         "stores": 0
+    },
+    "footer-information-block": {
+        "title": "Footer Information",
+        "identifier": "footer-information-block",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/footer/information.html",
+        "is_active": 1,
+        "stores": 0
+    },
+    "footer-shops-block": {
+        "title": "Footer Shops and Departments",
+        "identifier": "footer-shops-block",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/footer/shops-n-departments.html",
+        "is_active": 1,
+        "stores": 0
+    },
+    "footer-catalog-block": {
+        "title": "Footer Product and Categoris",
+        "identifier": "footer-catalog-block",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/footer/products-n-categories.html",
+        "is_active": 1,
+        "stores": 0
     }
 }

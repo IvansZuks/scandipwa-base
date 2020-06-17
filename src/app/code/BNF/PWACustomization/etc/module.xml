@@ -10,9 +10,9 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="BNF_Migration" setup_version="1.0.2">
+    <module name="BNF_PwaCustomization" setup_version="0.0.1">
         <sequence>
-            <module name="Scandiweb_Migration"/>
+            <module name="ScandiPWA_Customization"/>
         </sequence>
     </module>
 </config>

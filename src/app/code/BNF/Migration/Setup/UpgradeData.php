@@ -17,6 +17,6 @@ class UpgradeData extends AbstractUpgradeData
 {
     protected $migrations = [
         '1.0.0' => ChangeCopyright::class,
-        '1.0.1' => CreateFooterBlocks::class,
+        '1.0.2' => CreateFooterBlocks::class,
     ];
 }

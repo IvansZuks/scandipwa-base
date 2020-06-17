@@ -1,4 +1,4 @@
-/*
+/**
  * @category  Budo
  * @package   Budo_PWA
  * @author    Ivans Zuks <info@scandiweb.com>
@@ -8,7 +8,7 @@
 
 :root {
     --footer-font-size: 12px;
-    --footer-padding: 80px;
+    --footer-padding: 80px 24px;
     --footer-width: 1280px;
     --black: #000;
     --brown: #202020;
@@ -24,18 +24,21 @@
     justify-content: center;
     text-align: center;
 
-    &-Comodo {
-        width: 100px;
-    }
+    &-CmsImages {
+        text-align: center;
 
-    &-Klarna {
-        width: 175px;
-    }
-
-    &-Comodo,
-    &-Klarna {
-        @include mobile() {
+        .CmsBlock-Wrapper {
             margin: 0 auto;
+            width: 175px;
+
+            @include desktop {
+                margin: 0;
+                text-align: left;
+            }
+        }
+
+        .Image:last-of-type {
+            width: 100px;
         }
     }
 
@@ -48,11 +51,12 @@
         h4 {
             font-size: var(--footer-font-size);
             margin-bottom: 25px;
+            padding: 14px 0 0 14px;
             text-align: left;
             text-transform: uppercase;
 
-            @include mobile() {
-                padding: 14px 0 0 14px;
+            @include desktop() {
+                padding: 0;
             }
         }
     }
@@ -73,17 +77,18 @@
     }
 
     &-LinkList {
-        display: flex;
-        justify-content: space-between;
         max-width: var(--footer-width);
-        padding-bottom: var(--footer-padding);
-        padding-top: var(--footer-padding);
         width: 100%;
 
         @include mobile {
-            display: block;
             padding-bottom: 20px;
             padding-top: 0;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--footer-padding);
         }
 
         li {

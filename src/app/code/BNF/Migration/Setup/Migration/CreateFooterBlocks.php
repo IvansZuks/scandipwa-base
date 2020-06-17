@@ -10,6 +10,7 @@
 namespace BNF\Migration\Setup\Migration;
 
 use Scandiweb\Migration\Api\MigrationInterface;
+use Scandiweb\Migration\Helper\MediaMigration;
 use Magento\Framework\Setup\SetupInterface;
 use BNF\Migration\Helper\Cms;
 
@@ -31,13 +32,21 @@ class CreateFooterBlocks implements MigrationInterface
     protected $cmsHelper;
 
     /**
+     * @var MediaMigration
+     */
+    protected $mediaMigration;
+
+    /**
      * CreateCategoryNewProductsBlock constructor.
      * @param Cms $cmsHelper
+     * @param MediaMigration $mediaMigration
      */
     public function __construct(
-        Cms $cmsHelper
+        Cms $cmsHelper,
+        MediaMigration $mediaMigration
     ) {
         $this->cmsHelper = $cmsHelper;
+        $this->mediaMigration = $mediaMigration;
     }
 
     /**
@@ -52,5 +61,12 @@ class CreateFooterBlocks implements MigrationInterface
         foreach ($this->cmsHelper->getCmsBlocksDataFromFile(self::PATH) as $data) {
             $this->cmsHelper->createBlock($data['identifier'], $data['content'], $data);
         }
+
+        $mediaFiles = [
+            'blocks/footer/comodo-secure.svg',
+            'blocks/footer/klarna.svg'
+        ];
+
+        $this->mediaMigration->copyMediaFiles($mediaFiles, 'BNF_Migration', 'cms');
     }
 }

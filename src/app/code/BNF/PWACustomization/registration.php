@@ -1,3 +1,4 @@
+<?php
 /**
  * @category  Budo
  * @package   Budo_PWA
@@ -6,4 +7,10 @@
  * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
  */
 
-export { default } from './MenuItem.container';
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+ComponentRegistrar::MODULE,
+'BNF_PwaCustomization',
+__DIR__
+);

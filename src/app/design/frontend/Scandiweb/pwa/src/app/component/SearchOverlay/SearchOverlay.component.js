@@ -1,4 +1,4 @@
-/*
+/**
  * @category  Budo
  * @package   Budo_PWA
  * @author    Ivans Zuks <info@scandiweb.com>
