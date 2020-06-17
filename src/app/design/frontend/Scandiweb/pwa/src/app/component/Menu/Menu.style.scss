@@ -62,6 +62,8 @@
     &-MainCategories {
         @include desktop {
             display: block;
+            margin: 0 auto;
+            max-width: var(--content-wrapper-width);
             padding-left: 2rem;
             padding-right: 40px;
             z-index: 100;
@@ -101,7 +103,7 @@
 
                 @include desktop {
                     display: grid;
-                    grid-column-gap: 200px;
+                    grid-column-gap: 130px;
                     grid-row-gap: 40px;
                     grid-template-columns: repeat(4, 1fr);
                     padding: 0;
@@ -241,7 +243,6 @@
     &-SubCategoriesWrapper {
         display: none;
         position: absolute;
-        top: var(--header-total-height);
         width: 100%;
 
         &::before {
@@ -262,14 +263,18 @@
     &-SubCategoriesWrapperInner {
         background-color: var(--overlay-background);
 
-        @include desktop {
-            display: flex;
-            padding: 0 60px;
-        }
-
         @media (min-width: 1024px) and (max-width: 1130px) {
             max-height: calc(80vh - var(--header-total-height));
             overflow-y: auto;
+        }
+    }
+
+    &-SubCategoriesFullWidthWrapper {
+        max-width: var(--content-wrapper-width);
+
+        @include desktop {
+            display: flex;
+            margin: 0 auto;
         }
     }
 

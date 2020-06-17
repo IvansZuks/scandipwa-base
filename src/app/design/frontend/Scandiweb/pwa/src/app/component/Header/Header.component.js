@@ -11,6 +11,7 @@ import {
     Header as BaseHeader
 } from 'SourceComponent/Header/Header.component';
 import CartOverlay from 'Component/CartOverlay';
+import CmsBlock from 'Component/CmsBlock';
 import ClickOutside from 'Component/ClickOutside';
 import MyAccountOverlay from 'Component/MyAccountOverlay';
 import OfflineNotice from 'Component/OfflineNotice';
@@ -113,6 +114,29 @@ export class Header extends BaseHeader {
         );
     }
 
+    renderCmsBlocks() {
+        const { header_content:
+            {
+                header_contact_us,
+                header_cms_block
+            } = {}
+        } = window.contentConfiguration;
+
+        return (
+            <div
+                block="Header"
+                elem="CmsContent"
+            >
+                <div className="Header-ContactUs">
+                    <CmsBlock identifiers={ [header_contact_us || 'header-contact-us'] } />
+                </div>
+                <div className="Header-CmsBlock">
+                    <CmsBlock identifiers={ [header_cms_block || 'header-cms-block'] } />
+                </div>
+            </div>
+        )
+    }
+
     renderMenu() {
         const { isCheckout } = this.props;
 
@@ -182,6 +206,7 @@ export class Header extends BaseHeader {
             <>
                 <header block="Header" mods={ { name, isHiddenOnMobile, isCheckout } }>
                     <nav block="Header" elem="Nav">
+                        { this.renderCmsBlocks() }
                         { this.renderNavigationState() }
                     </nav>
                     { this.renderMenu() }

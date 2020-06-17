@@ -1,0 +1,16 @@
+{
+    "header-contact-us": {
+        "title": "Header Contact Us",
+        "identifier": "header-contact-us",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/header/contact-us.html",
+        "is_active": 1,
+        "stores": 0
+    },
+    "header-cms-block": {
+        "title": "Header Cms Block",
+        "identifier": "header-cms-block",
+        "content": "app/code/BNF/Migration/files/data/html/blocks/header/cms-block.html",
+        "is_active": 1,
+        "stores": 0
+    }
+}

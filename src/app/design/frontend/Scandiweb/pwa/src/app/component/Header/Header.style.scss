@@ -7,8 +7,10 @@
  */
 
 :root {
-    --header-background: #fff;
     --header-color: #000;
+    --header-color-gray: #999999;
+    --header-color-white: #fff;
+    --header-background: var(--header-color);
     --header-icon-stroke-width: 1px;
     --header-search-clear-background: #838383;
     --header-desktop-button-color: var(--primary-base-color);
@@ -19,10 +21,10 @@
     --header-total-height: calc(var(--header-height) + var(--offline-notice-height) + var(--demo-notice-height));
 
     @include desktop {
-        --header-dots-color: #000;
-        --header-height: 60px;
-        --header-nav-height: 60px;
-        --header-logo-height: calc(var(--header-height) - 35px);
+        --header-dots-color: var(--header-color-white);
+        --header-height: 160px;
+        --header-nav-height: 100px;
+        --header-logo-height: calc(var(--header-nav-height) - 35px);
     }
 }
 
@@ -171,7 +173,32 @@
         }
     }
 
+    &-CmsContent {
+        color: var(--header-color-gray);
+        flex: 1;
+    }
+
+    &-ContactUs {
+        &-Content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            text-transform: uppercase;
+            width: 280px;
+        }
+    }
+
+    &-CmsBlock {
+        &-Content {
+            font-weight: 700;
+            margin: 22px 0;
+            text-transform: uppercase;
+            width: 240px;
+        }
+    }
+
     &-Nav {
+        color: var(--header-color-white);
         height: var(--header-nav-height);
         display: flex;
         align-items: center;
@@ -246,6 +273,11 @@
                 &.Header-Button_isVisible {
                     overflow: hidden;
                 }
+
+                &::before,
+                &::after {
+                    border: var(--header-icon-stroke-width) solid var(--header-color-white);
+                }
             }
 
             &_minicart {
@@ -293,6 +325,7 @@
         &Wrapper {
             align-items: center;
             display: flex;
+            margin-top: 30px;
         }
 
         &Title {
@@ -310,6 +343,7 @@
             display: flex;
             height: 23px;
             margin-left: 2rem;
+            margin-top: 30px;
             padding-right: 1.8rem;
         }
 
@@ -332,6 +366,11 @@
                 &:before {
                     top: 6px
                 }
+            }
+
+            &::before,
+            &::after {
+                border: var(--header-icon-stroke-width) solid var(--header-color-white);
             }
         }
 

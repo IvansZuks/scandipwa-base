@@ -11,6 +11,7 @@ namespace BNF\Migration\Setup;
 
 use BNF\Migration\Setup\Migration\ChangeCopyright;
 use BNF\Migration\Setup\Migration\CreateFooterBlocks;
+use BNF\Migration\Setup\Migration\CreateHeaderBlocks;
 use Scandiweb\Migration\Setup\AbstractUpgradeData;
 
 class UpgradeData extends AbstractUpgradeData
@@ -18,5 +19,6 @@ class UpgradeData extends AbstractUpgradeData
     protected $migrations = [
         '1.0.0' => ChangeCopyright::class,
         '1.0.2' => CreateFooterBlocks::class,
+        '1.0.3' => CreateHeaderBlocks::class,
     ];
 }

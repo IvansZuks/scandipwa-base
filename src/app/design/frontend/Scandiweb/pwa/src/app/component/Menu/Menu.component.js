@@ -213,24 +213,29 @@ export default class MenuOverlay extends PureComponent {
                 >
                     <div
                         block="Menu"
-                        elem="SubCategoriesContentWrapper"
+                        elem="SubCategoriesFullWidthWrapper"
                     >
                         <div
                             block="Menu"
-                            elem="SubCategories"
+                            elem="SubCategoriesContentWrapper"
                         >
-                            { this.renderSubLevel(item) }
+                            <div
+                                block="Menu"
+                                elem="SubCategories"
+                            >
+                                { this.renderSubLevel(item) }
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        block="Menu"
-                        elem="Image"
-                    >
-                        <Image
-                            alt={ 'logo_alt' }
-                            src={ media(item.icon) }
-                            ratio="16x9"
-                        />
+                        <div
+                            block="Menu"
+                            elem="Image"
+                        >
+                            <Image
+                                alt={ 'logo_alt' }
+                                src={ media(item.icon) }
+                                ratio="16x9"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div

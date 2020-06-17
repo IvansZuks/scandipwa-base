@@ -18,24 +18,39 @@
             <group id="footer_content" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Footer</label>
 
-                <field id="footer_contact_us" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="footer_contact_us" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Footer Contact Us CMS block</label>
                     <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
                 </field>
-                <field id="footer_images_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="footer_images_block" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Footer Images CMS block</label>
                     <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
                 </field>
-                <field id="footer_information_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="footer_information_block" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Footer Information CMS block</label>
                     <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
                 </field>
-                <field id="footer_shops_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="footer_shops_block" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Footer Shops And Departments CMS block</label>
                     <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
                 </field>
-                <field id="footer_catalog_block" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="footer_catalog_block" translate="label" type="select" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Footer Product And Categories CMS block</label>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+            </group>
+            <group id="header_content" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Header and Menu</label>
+
+                <field id="header_contact_us" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header Contact Us block</label>
+                    <comment>The block displayed in the top left corner</comment>
+                    <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
+                </field>
+
+                <field id="header_cms_block" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header Banner CMS block</label>
+                    <comment>The block displayed bellow the contact us</comment>
                     <source_model>ScandiPWA\Customization\Model\Block\Source\Block</source_model>
                 </field>
             </group>

@@ -62,7 +62,9 @@ export class RouterContainer extends BaseRouterContainer {
             'footer-contact-us',
             'footer-information-block',
             'footer-shops-block',
-            'footer-catalog-block'
+            'footer-catalog-block',
+            'header-contact-us',
+            'header-cms-block'
         ];
     }
 }

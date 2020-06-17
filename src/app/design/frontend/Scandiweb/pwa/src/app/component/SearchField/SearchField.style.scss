@@ -41,6 +41,7 @@
     &-Wrapper {
         @include desktop {
             margin-right: 4rem;
+            margin-top: 30px;
         }
     }
 
@@ -142,13 +143,14 @@
         @include search-icon;
 
         &::before {
+            border: var(--header-icon-stroke-width) solid var(--header-color-white);
             box-shadow:
-                6px 6px 0 -7px var(--header-color),
-                7px 7px 0 -7px var(--header-color),
-                8px 8px 0 -7px var(--header-color),
-                9px 9px 0 -7px var(--header-color),
-                10px 10px 0 -7px var(--header-color),
-                11px 11px 0 -7px var(--header-color);
+                6px 6px 0 -7px var(--header-color-white),
+                7px 7px 0 -7px var(--header-color-white),
+                8px 8px 0 -7px var(--header-color-white),
+                9px 9px 0 -7px var(--header-color-white),
+                10px 10px 0 -7px var(--header-color-white),
+                11px 11px 0 -7px var(--header-color-white);
             height: calc(16px - var(--header-icon-stroke-width) * 2);
             left: 0;
             top: 2px;
@@ -161,6 +163,7 @@
 
         &::before,
         &::after {
+            background-color: var(--header-color-white);
             height: 22px;
             left: 8px;
             top: 2px;
@@ -186,10 +189,23 @@
     }
 
     &-SearchInnerWrapper {
+        color: var(--header-color);
+
         .SearchField-SearchIcon {
             left: 3.5rem;
             position: absolute;
             top: 4rem;
+
+            &::before {
+                border: var(--header-icon-stroke-width) solid var(--header-color);
+                box-shadow:
+                    6px 6px 0 -7px var(--header-color),
+                    7px 7px 0 -7px var(--header-color),
+                    8px 8px 0 -7px var(--header-color),
+                    9px 9px 0 -7px var(--header-color),
+                    10px 10px 0 -7px var(--header-color),
+                    11px 11px 0 -7px var(--header-color);
+            }
         }
     }
 }
